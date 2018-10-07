@@ -7,20 +7,29 @@
 			<div>
 				<%= product.title %>
 			</div>
+
 			<div>
 				<img src="<%= product.path_to_image %>" height="150" width="150"/>
 			</div>
+
 			<div>
 				<%= product.description %>
 			</div>
+
 			<div>
-				<%= product.price %>
+				Size: <%= product.size %> cm
 			</div>
+
+			<div>
+				Price: <%= product.price %> rub
+			</div>
+			
 			
 		</div>
 	<% end %>
 
 </div>
+<br />
 
 <button class="btn btn-primary" onclick="something()">Click me!</button>
 
