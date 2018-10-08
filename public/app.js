@@ -29,4 +29,7 @@ function find_items()
 
     	total += value * 1;
 	}
+	
+	
+	$('body').append(total).wrap("<div class='container'></div>");
 }
