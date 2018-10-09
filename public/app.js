@@ -15,21 +15,28 @@ function add_to_cart(id)
 
 	var x = window.localStorage.getItem(key);
 	x = x * 1 + 1;
-	window.localStorage.setItem(key, x);	
+	window.localStorage.setItem(key, x);
+
+	//count of items in cart
+	alert('Items in your cart: ' + cart_get_number_of_items());
 }
 
 
-function find_items() 
+function cart_get_number_of_items() 
 {
 	var total = 0;
 
-	for (var i = 0; i < localStorage.length; i++) {
+	for (var i = 0; i < window.localStorage.length; i++) {
 
-		var value = localStorage.getItem(localStorage.key(i));
+		var key = window.localStorage.key(i);
+		var value = window.localStorage.getItem(key);
 
-    	total += value * 1;
+		if (key.indexOf('product_') == 0)
+		{
+			total += value * 1;
+		}
+    	
 	}
 	
-	
-	$('body').append(total).wrap("<div class='container'></div>");
+	return total; // can check in console in browser (cart_get_number_of_items())
 }
