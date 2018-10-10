@@ -19,6 +19,24 @@ function add_to_cart(id)
 
 	//count of items in cart
 	update_orders_input();
+	update_orders_button();
+}
+
+
+function update_orders_input()
+{
+	var orders = cart_get_orders();
+
+	$('#orders_input').val(orders); //put values
+
+}
+
+
+function update_orders_button()
+{
+	var text = 'Cart (' + cart_get_number_of_items() + ')';
+
+	$('#orders_button').val(text);
 }
 
 
@@ -40,16 +58,6 @@ function cart_get_number_of_items()
 	
 	return total; // can check in console in browser (cart_get_number_of_items())
 }
-
-
-function update_orders_input()
-{
-	var orders = cart_get_orders();
-
-	$('#orders_input').val(orders); //put values
-
-}
-
 
 
 function cart_get_orders() 
