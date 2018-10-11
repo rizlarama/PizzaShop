@@ -26,6 +26,17 @@ function add_to_cart(id)
 
 function update_orders_input()
 {
+	var orders = cart_get_orders();
+
+    $('#orders_input').val(orders); //put values
+	
+}
+
+
+
+function orders_to_table()
+{
+
 	var html = '<table class="table table-striped"';
 	html += '<thead>';
 	html += '<tr>';
@@ -33,6 +44,7 @@ function update_orders_input()
 	html += '<th scope="col">Count</th>';
 	html += '</tr>';
 	html += '</thead>';
+	html += '<tbody>';
 
 	for (var i = 0; i < window.localStorage.length; i++) {
 
@@ -46,6 +58,11 @@ function update_orders_input()
     	
 	}
 	
+	html += '<tr>';
+	html += '<th scope="row">Total</th>';
+	html += '<th scope="row">' + cart_get_number_of_items() + '</th>';
+	html += '</tr>';
+	html += '</tbody>';
 
 	window.onload = function()
 		{
@@ -55,22 +72,22 @@ function update_orders_input()
 }
 
 
-
-function orders_to_table()
-{
-
-	var orders = cart_get_orders();
-	
-	$('#product_id').val(orders);
-
-}
-
-
 function update_orders_button()
 {
 	var text = 'Cart (' + cart_get_number_of_items() + ')';
 
 	$('#orders_button').val(text);
+}
+
+
+function update_label_orders()
+{
+	var orders = cart_get_number_of_items();
+
+	var your_count = document.getElementById('count_orders');
+
+    your_count.innerHTML = orders;
+	
 }
 
 
