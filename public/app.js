@@ -9,6 +9,7 @@ function something()
 	alert(x);
 }
 
+
 function add_to_cart(id)
 {
 	var key = 'product_' + id; //extract variable, refactoring
@@ -25,9 +26,42 @@ function add_to_cart(id)
 
 function update_orders_input()
 {
-	var orders = cart_get_orders();
+	var html = '<table class="table table-striped"';
+	html += '<thead>';
+	html += '<tr>';
+	html += '<th scope="col">Products</th>';
+	html += '<th scope="col">Count</th>';
+	html += '</tr>';
+	html += '</thead>';
 
-	$('#orders_input').val(orders); //put values
+	for (var i = 0; i < window.localStorage.length; i++) {
+
+		var key = window.localStorage.key(i);
+		var value = window.localStorage.getItem(key);
+
+		html += '<tr>';
+		html += '<td>' + key + '</td>';
+		html += '<td>' + value + '</td>';
+		html += '</tr>';
+    	
+	}
+	
+
+	window.onload = function()
+		{
+			document.getElementById('container').innerHTML = html + '</table>';
+		}
+
+}
+
+
+
+function orders_to_table()
+{
+
+	var orders = cart_get_orders();
+	
+	$('#product_id').val(orders);
 
 }
 
@@ -76,5 +110,5 @@ function cart_get_orders()
     	
 	}
 	
-	return orders; // can check in console in browser (cart_get_number_of_items())
+	return orders; // can check in console in browser (cart_get_orders())
 }
