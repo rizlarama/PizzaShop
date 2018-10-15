@@ -20,9 +20,13 @@ get '/about' do
 end
 
 post '/cart' do
-  erb :cart
+	@order = Order.new
+  	erb :cart
 end
 
 post '/order' do
-  erb "Thank you, your order is accepted!"
+	@order = Order.new params[:order]
+	@order.save
+
+  	erb "Thank you, your order is accepted!"
 end
