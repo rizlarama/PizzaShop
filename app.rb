@@ -20,3 +20,7 @@ end
 post '/cart' do
   erb :cart
 end
+
+post '/order' do
+  erb "Thank you, your order is accepted!"
+end

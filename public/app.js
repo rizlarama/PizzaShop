@@ -84,7 +84,7 @@ function update_label_orders()
 {
 	var orders = cart_get_number_of_items();
 
-	var your_count = document.getElementById('count_orders');
+	var your_count = document.getElementById('label_orders');
 
     your_count.innerHTML = orders;
 	
