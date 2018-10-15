@@ -74,6 +74,8 @@ function update_label_orders() //show in label in cart.erb number of items in ca
 	var your_count = document.getElementById('label_orders');
 
     your_count.innerHTML = orders;
+    
+    $('#number_of_orders').val(orders);
 	
 }
 
