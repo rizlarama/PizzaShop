@@ -1,16 +1,4 @@
-function something() 
-{
-	var x = window.localStorage.getItem('bbb');
-	
-	x = x * 1 + 1;
-
-	window.localStorage.setItem('bbb', x);
-
-	alert(x);
-}
-
-
-function add_to_cart(id)
+function add_to_cart(id) //adding user's choose of pizza to cart
 {
 	var key = 'product_' + id; //extract variable, refactoring
 
@@ -20,11 +8,11 @@ function add_to_cart(id)
 
 	//count of items in cart
 	update_orders_input();
-	update_orders_button();
+	update_orders_button(); 
 }
 
 
-function update_orders_input()
+function update_orders_input() //show user's choices in text input (hidden)
 {
 	var orders = cart_get_orders();
 
@@ -33,8 +21,7 @@ function update_orders_input()
 }
 
 
-
-function orders_to_table()
+function orders_to_table() //show user's choices in table in cart.erb
 {
 
 	var html = '<table class="table table-striped"';
@@ -72,7 +59,7 @@ function orders_to_table()
 }
 
 
-function update_orders_button()
+function update_orders_button() //update user's choice in button
 {
 	var text = 'Cart (' + cart_get_number_of_items() + ')';
 
@@ -80,7 +67,7 @@ function update_orders_button()
 }
 
 
-function update_label_orders()
+function update_label_orders() //show in label in cart.erb number of items in cart
 {
 	var orders = cart_get_number_of_items();
 
@@ -91,7 +78,7 @@ function update_label_orders()
 }
 
 
-function cart_get_number_of_items() 
+function cart_get_number_of_items() //only number of all items in cart
 {
 	var total = 0;
 
@@ -111,7 +98,7 @@ function cart_get_number_of_items()
 }
 
 
-function cart_get_orders() 
+function cart_get_orders() //all orders and theirs amount
 {
 	var orders ='';
 
