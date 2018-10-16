@@ -1,0 +1,34 @@
+<h3>All orders:</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% total_price = 0 %>
+  	<% total_qty = 0 %>
+  	<% @items.each do |item| %>
+    <tr>
+      <th scope="row"><%= item[0].id %></th>
+      <td><%= item[0].title %></td>
+      <td><%= item[0].price %> rub</td>
+      <td><%= item[1] %></td>
+    </tr>
+      <% total_price += item[0].price * item[1].to_i %>
+      <% total_qty += item[1].to_i %>
+    <% end %>
+
+    <tr>
+      <th scope="row">Total</th>
+      <th></th>
+      <th scope="row"><%= total_price %> rub</th>
+      <th scope="row"><%= total_qty %></th>     
+    </tr>
+  </tbody>
+</table>
+

@@ -21,6 +21,7 @@ get '/about' do
 end
 
 get '/all_orders' do
+	@orders = Order.all('created_at DESC')
 	erb :all_orders
 end
 
