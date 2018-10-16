@@ -20,6 +20,10 @@ get '/about' do
 	erb :about
 end
 
+get '/all_orders' do
+	erb :all_orders
+end
+
 post '/cart' do
 	orders_input = params[:orders]
 	@items = parse_orders_input orders_input
@@ -34,7 +38,7 @@ post '/cart' do
 end
 
 
-post '/order' do
+post '/place_order' do
 	@order = Order.new params[:order]
 	@order.save
 
