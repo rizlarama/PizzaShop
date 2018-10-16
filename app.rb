@@ -10,6 +10,7 @@ class Product < ActiveRecord::Base; end
 
 class Order < ActiveRecord::Base; end
 
+
 get '/' do
 	@products = Product.all
 	erb :index
@@ -21,10 +22,17 @@ end
 
 post '/cart' do
 	orders_input = params[:orders]
-	@orders = parse_orders_input orders_input
+	@items = parse_orders_input orders_input
+
+	@items.each do |item|
+		# id, cnt
+		item[0] = Product.find(item[0])
+	end
+
 	@order = Order.new
-  	erb "#{@orders.inspect}"
+  	erb :cart
 end
+
 
 post '/order' do
 	@order = Order.new params[:order]
@@ -32,6 +40,7 @@ post '/order' do
 
   	erb "Thank you, your order is accepted!"
 end
+
 
 def parse_orders_input orders_input
 
