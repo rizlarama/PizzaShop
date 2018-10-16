@@ -21,7 +21,9 @@ get '/about' do
 end
 
 get '/all_orders' do
-	@orders = Order.all('created_at DESC')
+	
+	@orders = Order.all
+
 	erb :all_orders
 end
 
@@ -40,8 +42,8 @@ end
 
 
 post '/place_order' do
-	@order = Order.new params[:order]
-	@order.save
+	order = Order.new params[:order]
+	order.save
 
   	erb "Thank you, your order is accepted!"
 end
