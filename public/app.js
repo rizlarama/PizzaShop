@@ -17,6 +17,7 @@ function update_orders_input() //show user's choices in text input (hidden)
 	var orders = cart_get_orders();
 
     $('#orders_input').val(orders); //put values
+    $('#number_orders').val(orders);
 	
 }
 
@@ -31,13 +32,9 @@ function update_orders_button() //update user's choice in button
 
 function update_label_orders() //show in label and in text field in cart.erb number of items in cart
 {
-	var orders = cart_get_number_of_items();
+	var orders = cart_get_orders();
 
-	var your_count = document.getElementById('label_orders');
-
-    your_count.innerHTML = orders;
-    
-    $('#number_of_orders').val(orders);
+    $('#number_orders').val(orders); 
 	
 }
 

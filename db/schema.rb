@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_101800) do
     t.decimal "phone"
     t.text "name"
     t.text "address"
-    t.decimal "number_orders"
+    t.text "number_orders"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

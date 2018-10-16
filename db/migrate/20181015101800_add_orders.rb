@@ -4,7 +4,7 @@ class AddOrders < ActiveRecord::Migration[5.2]
   		t.decimal :phone
   		t.text :name
   		t.text :address
-  		t.decimal :number_orders
+  		t.text :number_orders
 
   		t.timestamps
   	end
