@@ -21,44 +21,6 @@ function update_orders_input() //show user's choices in text input (hidden)
 }
 
 
-function orders_to_table() //show user's choices in table in cart.erb
-{
-
-	var html = '<table class="table table-striped"';
-	html += '<thead>';
-	html += '<tr>';
-	html += '<th scope="col">Products</th>';
-	html += '<th scope="col">Count</th>';
-	html += '</tr>';
-	html += '</thead>';
-	html += '<tbody>';
-
-	for (var i = 0; i < window.localStorage.length; i++) {
-
-		var key = window.localStorage.key(i);
-		var value = window.localStorage.getItem(key);
-
-		html += '<tr>';
-		html += '<td>' + key + '</td>';
-		html += '<td>' + value + '</td>';
-		html += '</tr>';
-    	
-	}
-	
-	html += '<tr>';
-	html += '<th scope="row">Total</th>';
-	html += '<th scope="row">' + cart_get_number_of_items() + '</th>';
-	html += '</tr>';
-	html += '</tbody>';
-
-	window.onload = function()
-		{
-			document.getElementById('container').innerHTML = html + '</table>';
-		}
-
-}
-
-
 function update_orders_button() //update user's choice in button
 {
 	var text = 'Cart (' + cart_get_number_of_items() + ')';
@@ -67,7 +29,7 @@ function update_orders_button() //update user's choice in button
 }
 
 
-function update_label_orders() //show in label in cart.erb number of items in cart
+function update_label_orders() //show in label and in text field in cart.erb number of items in cart
 {
 	var orders = cart_get_number_of_items();
 
