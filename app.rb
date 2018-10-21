@@ -45,7 +45,7 @@ post '/place_order' do
 	order = Order.new params[:order]
 	order.save
 
-  	erb "Thank you, your order is accepted!"
+  	erb :order_placed
 end
 
 
