@@ -79,6 +79,11 @@ function cart_get_orders() //all orders and theirs amount
 }
 
 function cancel_order()
-{
+{	
+	window.localStorage.clear();
+
+	update_orders_input();
+	update_orders_button();
+
 	return false;
 }
