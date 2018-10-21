@@ -22,14 +22,14 @@ end
 
 get '/all_orders' do
 	
-	@orders = Order.all
+	@orders = Order.order('created_at DESC')
 
 	erb :all_orders
 end
 
 post '/cart' do
 	#get list of params and parse it
-	
+
 	orders_input = params[:orders_input]
 	@items = parse_orders_input orders_input
 

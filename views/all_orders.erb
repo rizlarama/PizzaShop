@@ -3,7 +3,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Phone</th>
       <th scope="col">Address</th>
@@ -12,9 +11,9 @@
   </thead>
   <tbody>
   	
+    
   	<% @orders.each do |order| %>
     <tr>
-      <th scope="row"><%= order.id %></th>
       <td><%= order.name %></td>
       <td><%= order.phone.to_i %></td>
       <td><%= order.address %></td>
@@ -24,4 +23,3 @@
     <% end %>
   </tbody>
 </table>
-
