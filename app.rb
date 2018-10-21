@@ -28,9 +28,17 @@ get '/all_orders' do
 end
 
 post '/cart' do
+	#get list of params and parse it
+	
 	orders_input = params[:orders_input]
 	@items = parse_orders_input orders_input
 
+	#message about cart is empty
+	if @items.length == 0
+		return erb :cart_is_empty
+	end
+
+	#list of products in cart
 	@items.each do |item|
 		# id, cnt
 		item[0] = Product.find(item[0])
