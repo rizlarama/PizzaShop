@@ -77,3 +77,8 @@ function cart_get_orders() //all orders and theirs amount
 	
 	return orders; // can check in console in browser (cart_get_orders())
 }
+
+function cancel_order()
+{
+	return false;
+}
