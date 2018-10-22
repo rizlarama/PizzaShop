@@ -1,5 +1,5 @@
-<h2>Welcome to Pizza Shop!</h2>
-
+<h2 style="text-align: center;">Welcome to Pizza Shop!</h2>
+<br />
 <div class="row">
 
 	<% @products.each do |product| %>
@@ -21,13 +21,13 @@
 			</div>
 
 			<div id="content">
-				Price: <%= product.price %> rub
+				Price: <%= product.price %> eur
 			</div>
 			
 			<div id="button_insert">
 				<button type="button" class="btn btn-success btn-sm" onclick="add_to_cart(<%= product.id %>)">Add to cart</button>
 			</div>
-
+			<br /><br />
 		</div>
 	<% end %>
 
