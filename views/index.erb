@@ -4,27 +4,27 @@
 
 	<% @products.each do |product| %>
 		<div class="col-md-3">
-			<div>
+			<div id="pizza_title">
 				<%= product.title %>
 			</div>
 
-			<div>
-				<img src="<%= product.path_to_image %>" height="150" width="150"/>
+			<div id="image">
+				<img src="<%= product.path_to_image %>" height="200" width="200"/>
 			</div>
 
-			<div>
+			<div id="content">
 				<%= product.description %>
 			</div>
 
-			<div>
+			<div id="content">
 				Size: <%= product.size %> cm
 			</div>
 
-			<div>
+			<div id="content">
 				Price: <%= product.price %> rub
 			</div>
 			
-			<div>
+			<div id="button_insert">
 				<button type="button" class="btn btn-success btn-sm" onclick="add_to_cart(<%= product.id %>)">Add to cart</button>
 			</div>
 

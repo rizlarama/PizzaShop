@@ -8,3 +8,25 @@
 	padding-left: 20px;
 
 }
+
+
+#pizza_title {
+	font-family: Calibri;
+	font-size: 20px;
+	text-align: center;
+}
+
+#image {
+	
+	text-align: center;
+}
+
+#content {
+	font-family: Calibri;
+	font-size: 17px;
+	text-align: center;
+}
+
+#button_insert {
+	text-align: center;
+}
